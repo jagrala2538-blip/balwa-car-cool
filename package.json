@@ -1,0 +1,12 @@
+{
+  "name": "balwa-car-cool",
+  "version": "1.0.0",
+  "description": "Balwa Car Cool - Billing Software",
+  "main": "server.js",
+  "scripts": {
+    "start": "agy-node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
