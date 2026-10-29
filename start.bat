@@ -1,3 +1,0 @@
-@echo off
-echo Opening Balwa Car Cool Billing...
-start index.html
