@@ -1,4 +1,10 @@
 {
-  "buildCommand": "echo static",
-  "outputDirectory": "."
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/((?!logo\\.png|favicon\\.ico).*)",
+      "destination": "/index.html"
+    }
+  ]
 }

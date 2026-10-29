@@ -1,0 +1,8 @@
+{
+  "name": "balwa-car-cool",
+  "version": "1.0.0",
+  "description": "Balwa Car Cool - Billing Software",
+  "scripts": {
+    "build": "echo Build complete"
+  }
+}
