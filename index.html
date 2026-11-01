@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Balwa Car Cool – Billing</title>
-<link rel="icon" type="image/png" href="logo.png"><link rel="apple-touch-icon" href="logo.png">
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0d1a3d"><link rel="icon" type="image/png" href="logo.png"><link rel="apple-touch-icon" href="logo.png">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
@@ -238,6 +238,7 @@ function rs(){modal(`<h3>Restore</h3><textarea rows="8" id="rst" placeholder="Pa
 function doRs(){if(fs)return toast('Restore is available in offline mode only');try{const d=JSON.parse($('#rst').value);if(!d.products||!d.bills)throw 0;db=d;save();load();closeM();start();toast('Data restored')}catch(e){toast('Invalid backup text')}}
 function pw(){ask('Change Password',[{k:'p',l:'New Password',t:'password'}],async o=>{if(o.p.length<4)return toast('At least 4 characters');if(fs){try{await auth.currentUser.updatePassword(o.p);return toast('Password changed')}catch(e){return toast('Please log in again, then retry')}}db.user.h=await hs(o.p);save();toast('Password changed')})}
 /* ---------- boot ---------- */
+if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>{});
 load();initFB();
 if(fs){auth.onAuthStateChanged(u=>{if(u)sync();else{unsub();showLogin()}})}
 else{let _in=0;try{_in=sessionStorage.getItem('bcc_in')}catch(e){}if(_in&&db.user)start();else showLogin()}

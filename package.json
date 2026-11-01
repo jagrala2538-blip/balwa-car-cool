@@ -1,0 +1,23 @@
+{
+  "name": "balwa-car-cool",
+  "version": "1.0.0",
+  "description": "Balwa Car Cool Billing",
+  "main": "main.js",
+  "author": "Balwa Car Cool",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.balwacarcool.billing",
+    "productName": "Balwa Car Cool",
+    "files": ["main.js", "offline.html"],
+    "directories": {"buildResources": "build"},
+    "win": {"target": "nsis", "icon": "build/icon.png"},
+    "nsis": {"oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true}
+  }
+}
